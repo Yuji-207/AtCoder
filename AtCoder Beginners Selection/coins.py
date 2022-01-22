@@ -1,21 +1,29 @@
-a = int(input())
-b = int(input())
-c = int(input())
-x = int(input())
+def main(a, b, c, x):
+    """
+    >>> from coins import main
+    >>> main(2, 2, 2, 100)
+    2
+    >>> main(30, 40, 50, 6000)
+    213
+    >>> main(0, 0, 1, 50)
+    1
+    >>> main(1, 0, 0, 20000)
+    0
+    """
 
-n500 = x // 500
-if c < n500:
-    n500 = c
+    n = 0
+    for i in range(a + 1):
+        for j in range(b + 1):
+            for k in range(c + 1):
+                if i * 500 + j * 100 + k * 50 == x:
+                    n += 1
 
-n100 = n500 // 100
-if b < n100:
-    n100 = b
+    print(n)
 
-n50 = n100 // 50
-if a < n50:
-    n50 = a
 
-if n500 * 500 + n100 * 100 + n50 * 50 !== x:
-    print(0)
-else:
-    i = 5
+if __name__ == '__main__':
+    a = int(input())
+    b = int(input())
+    c = int(input())
+    x = int(input())
+    main(a, b, c, x)
