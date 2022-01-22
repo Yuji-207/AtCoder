@@ -25,5 +25,5 @@ def main(n, a, b):
 
 
 if __name__ == '__main__':
-    n, a, b = map(int, input().split(' '))
+    n, a, b = map(int, input().split())
     main(n, a, b)
