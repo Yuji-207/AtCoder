@@ -23,7 +23,6 @@ def main(n, a, b):
     print(sum_)
 
 
-
 if __name__ == '__main__':
     n, a, b = map(int, input().split())
     main(n, a, b)
