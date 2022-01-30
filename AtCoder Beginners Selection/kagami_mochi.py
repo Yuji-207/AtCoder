@@ -11,6 +11,8 @@ def main(n, d):
     >>> main(100, list(range(1, 101)))
     100
     """
+
+    # print(len(set(d)))  # これだけでもOK
     
     count = 0  # 鏡餅の段数
 
