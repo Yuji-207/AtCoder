@@ -13,22 +13,30 @@ def main(s):
     >>> main('a' * (10 ** 6))
     Yes
     """
-    
-    while s:
-        if s[0] == 'a':
-            s = s[1:]
-        else:
-            break
 
+    from collections import deque
+
+    s = deque(s)  # 双方向リスト
+
+    # 両端のaを削除
     while s:
+
         if s[-1] == 'a':
-            s = s[:-1]
+            s.pop()
+            if s and s[0] == 'a':
+                s.popleft()
+
         else:
             break
 
+    # 回文の確認
     while s:
+
         if s[0] == s[-1]:
-            s = s[1:-1]
+            s.pop()
+            if s:
+                s.popleft()
+
         else:
             print('No')
             return None
